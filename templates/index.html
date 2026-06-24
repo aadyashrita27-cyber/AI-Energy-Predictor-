@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Energy Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI Energy Predictor</h1>
+
+    <p>Predict future energy consumption using Machine Learning</p>
+
+    <form method="POST">
+
+        <input
+            type="number"
+            name="hour"
+            min="1"
+            max="24"
+            placeholder="Enter Hour (1-24)"
+            required>
+
+        <button type="submit">
+            Predict
+        </button>
+
+    </form>
+
+    {% if prediction %}
+
+    <div class="result">
+
+        <h2>{{ prediction }} kWh</h2>
+
+        <p><strong>Predicted Energy Consumption</strong></p>
+
+        <h2>Energy Usage Graph</h2>
+
+        <img
+            src="{{ url_for('static', filename='energy_graph.png') }}"
+            width="100%"
+            alt="Energy Graph">
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
