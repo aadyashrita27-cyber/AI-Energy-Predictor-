@@ -74,9 +74,5 @@ import os
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
-<<<<<<< HEAD
-=======
-    app.run(debug=True)
->>>>>>> 5fc76b57e0781826a6dad5d0409cec55cb764cd4
-   
+
 
